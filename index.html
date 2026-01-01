@@ -8,38 +8,93 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
       text-align: center;
       color: #222;
     }
 
     .banner {
       width: 100%;
-      height: 120px;
+      max-height: 120px;
       object-fit: contain;
-      margin: 10px 0;
+      margin: 20px 0;
     }
 
     .container {
-      margin-top: 30px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column; /* stack buttons vertically */
+      align-items: center;
+      gap: 20px; /* space between buttons */
     }
 
+    /* Common modern button style */
     .btn {
-      display: block;
-      width: 280px;
-      margin: 12px auto;
-      padding: 14px;
-      font-size: 16px;
+      width: 320px;
+      height: 60px;
+      font-size: 18px;
+      font-weight: 600;
       border: none;
-      border-radius: 6px;
+      border-radius: 12px;
       cursor: pointer;
-      background: #222;
-      color: white;
+      letter-spacing: 0.4px;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.15), -4px -4px 10px rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      opacity: 0.9;
+    /* First button - blue */
+    .btn-blue {
+      background: linear-gradient(145deg, #0b3d91, #1a56c6);
+      color: #ffd700; /* gold text */
+    }
+
+    .btn-blue::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(255,255,255,0.15);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-blue:hover {
+      background: linear-gradient(145deg, #1a56c6, #0b3d91);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 6px 6px 15px rgba(0,0,0,0.2), -6px -6px 15px rgba(255,255,255,0.1);
+    }
+
+    /* Second button - green */
+    .btn-green {
+      background: linear-gradient(145deg, #2e7d32, #4caf50); /* classy green */
+      color: #ffffff; /* uniform white text */
+    }
+
+    .btn-green::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(255,255,255,0.1); /* subtle shine */
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-green:hover {
+      background: linear-gradient(145deg, #4caf50, #2e7d32);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 6px 6px 15px rgba(0,0,0,0.2), -6px -6px 15px rgba(255,255,255,0.1);
     }
   </style>
 </head>
@@ -48,12 +103,12 @@
   <img src="images/banner.png" class="banner" alt="Banner">
 
   <div class="container">
-    <button class="btn" onclick="location.href='fixed.html'">
-     RNJM Church Promise for 2026
+    <button class="btn btn-blue" onclick="location.href='fixed.html'">
+      RNJM Church Promise for 2026
     </button>
 
-    <button class="btn" onclick="location.href='promise.html'">
-      Click here to get your personal promise for 2026
+    <button class="btn btn-green" onclick="location.href='promise.html'">
+      Get your personal promise for 2026
     </button>
   </div>
 
